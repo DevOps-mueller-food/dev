@@ -73,8 +73,52 @@
             <strong>Ravioli Bündner Art</strong>
             <em>Bündner Speck, Kartoffel, Spinat</em>
           </div>
-          <div class="plate"></div>
-          <div class="stamp">Premium Pasta · matzes ravioli ·</div>
+          <svg class="hero-svg" viewBox="0 0 500 600" role="img" aria-label="matzes ravioli auf einem Teller" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="g-plate" cx="50%" cy="48%" r="58%">
+                <stop offset="0%" stop-color="#fff5e1"/>
+                <stop offset="68%" stop-color="#e8d0a8"/>
+                <stop offset="100%" stop-color="#a88556"/>
+              </radialGradient>
+              <radialGradient id="g-rav-a" cx="36%" cy="28%" r="78%">
+                <stop offset="0%" stop-color="#fff5d3"/>
+                <stop offset="55%" stop-color="#e9b878"/>
+                <stop offset="100%" stop-color="#9c6b34"/>
+              </radialGradient>
+              <radialGradient id="g-rav-b" cx="40%" cy="30%" r="78%">
+                <stop offset="0%" stop-color="#ffe9b6"/>
+                <stop offset="55%" stop-color="#cb944f"/>
+                <stop offset="100%" stop-color="#6d401c"/>
+              </radialGradient>
+              <filter id="f-shadow" x="-30%" y="-30%" width="160%" height="160%">
+                <feGaussianBlur in="SourceAlpha" stdDeviation="14"/>
+                <feOffset dy="20"/>
+                <feComponentTransfer><feFuncA type="linear" slope="0.32"/></feComponentTransfer>
+                <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+              <symbol id="ravioli" overflow="visible">
+                <path d="M 0 0 a 10 10 0 0 1 20 0 a 10 10 0 0 1 20 0 a 10 10 0 0 1 20 0 a 10 10 0 0 1 20 0 a 10 10 0 0 1 20 0 a 10 10 0 0 1 20 0 a 10 10 0 0 1 20 0 a 10 10 0 0 1 20 0 a 10 10 0 0 1 20 0 a 10 10 0 0 1 20 0 a 10 10 0 0 1 20 0 a 10 10 0 0 1 20 0 a 10 10 0 0 1 0 20 a 10 10 0 0 1 0 20 a 10 10 0 0 1 0 20 a 10 10 0 0 1 0 20 a 10 10 0 0 1 0 20 a 10 10 0 0 1 0 20 a 10 10 0 0 1 0 20 a 10 10 0 0 1 0 20 a 10 10 0 0 1 -20 0 a 10 10 0 0 1 -20 0 a 10 10 0 0 1 -20 0 a 10 10 0 0 1 -20 0 a 10 10 0 0 1 -20 0 a 10 10 0 0 1 -20 0 a 10 10 0 0 1 -20 0 a 10 10 0 0 1 -20 0 a 10 10 0 0 1 -20 0 a 10 10 0 0 1 -20 0 a 10 10 0 0 1 -20 0 a 10 10 0 0 1 -20 0 a 10 10 0 0 1 0 -20 a 10 10 0 0 1 0 -20 a 10 10 0 0 1 0 -20 a 10 10 0 0 1 0 -20 a 10 10 0 0 1 0 -20 a 10 10 0 0 1 0 -20 a 10 10 0 0 1 0 -20 a 10 10 0 0 1 0 -20 Z"/>
+              </symbol>
+            </defs>
+            <ellipse cx="250" cy="320" rx="220" ry="180" fill="url(#g-plate)"/>
+            <ellipse cx="250" cy="320" rx="200" ry="162" fill="none" stroke="#7a5530" stroke-opacity="0.18" stroke-width="2"/>
+            <g filter="url(#f-shadow)" transform="translate(105 180) rotate(-9 120 80)">
+              <use href="#ravioli" fill="url(#g-rav-b)"/>
+              <ellipse cx="120" cy="60" rx="70" ry="32" fill="#fff8e0" opacity="0.16"/>
+            </g>
+            <g filter="url(#f-shadow)" transform="translate(165 250) rotate(8 120 80)">
+              <use href="#ravioli" fill="url(#g-rav-a)"/>
+              <ellipse cx="120" cy="60" rx="70" ry="32" fill="#fff8e0" opacity="0.22"/>
+            </g>
+            <g fill="#3d5a3a" opacity="0.85">
+              <circle cx="385" cy="245" r="5"/>
+              <circle cx="400" cy="262" r="3.5"/>
+              <circle cx="375" cy="265" r="4"/>
+              <circle cx="105" cy="370" r="4"/>
+              <circle cx="120" cy="383" r="3"/>
+              <circle cx="92" cy="385" r="2.5"/>
+            </g>
+          </svg>
         </div>
       </div>
     </section>
