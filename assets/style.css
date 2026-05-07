@@ -1563,19 +1563,15 @@ select {
 /* Reveal on scroll */
 .rv {
   opacity: 0;
-  transform: translateY(34px);
-  filter: blur(6px);
+  transform: translate3d(0, 24px, 0);
   transition:
-    opacity 0.85s cubic-bezier(.2,.7,.2,1) var(--rv-delay, 0ms),
-    transform 0.85s cubic-bezier(.2,.7,.2,1) var(--rv-delay, 0ms),
-    filter 0.85s ease var(--rv-delay, 0ms);
-  will-change: opacity, transform, filter;
+    opacity 0.6s ease var(--rv-delay, 0ms),
+    transform 0.6s cubic-bezier(.2,.7,.2,1) var(--rv-delay, 0ms);
 }
 
 .rv-in {
   opacity: 1;
-  transform: translateY(0);
-  filter: blur(0);
+  transform: translate3d(0, 0, 0);
 }
 
 /* Stagger inside grids */
@@ -1599,11 +1595,8 @@ select {
 .b2b-cards .rv:nth-child(3) { --rv-delay: 180ms; }
 .b2b-cards .rv:nth-child(4) { --rv-delay: 270ms; }
 
-/* Smooth tilt on product cards */
 .product-card {
-  transform-style: preserve-3d;
-  perspective: 900px;
-  transition: transform 0.45s cubic-bezier(.2,.7,.2,1), box-shadow 0.45s ease;
+  transition: transform 0.35s cubic-bezier(.2,.7,.2,1), box-shadow 0.35s ease;
 }
 
 .product-img {
@@ -1613,12 +1606,6 @@ select {
 
 .pasta-shape {
   transition: transform 0.55s cubic-bezier(.2,.7,.2,1);
-  animation: shapeIdle 9s ease-in-out infinite;
-}
-
-@keyframes shapeIdle {
-  0%, 100% { box-shadow: inset 0 0 0 14px rgba(255,255,255,0.22), 0 24px 52px rgba(20,18,15,0.24); }
-  50%      { box-shadow: inset 0 0 0 14px rgba(255,255,255,0.32), 0 30px 64px rgba(20,18,15,0.32); }
 }
 
 .product-card:hover .product-img {
@@ -1638,24 +1625,12 @@ select {
   border-color: rgba(201, 153, 91, 0.5);
 }
 
-/* Plate idle animation */
 .plate {
   transition: transform 0.6s cubic-bezier(.2,.7,.2,1);
-  animation: plateIdle 12s ease-in-out infinite;
-}
-
-@keyframes plateIdle {
-  0%, 100% { filter: drop-shadow(0 24px 80px rgba(20,18,15,0.14)); }
-  50%      { filter: drop-shadow(0 36px 100px rgba(20,18,15,0.22)); }
 }
 
 .floating-card {
   transition: transform 0.6s cubic-bezier(.2,.7,.2,1);
-}
-
-.stamp {
-  transform: translateY(var(--tilt, 0));
-  transition: transform 0.5s cubic-bezier(.2,.7,.2,1);
 }
 
 /* Buttons get a subtle shine on hover */
@@ -1756,14 +1731,8 @@ select {
   right: 0;
 }
 
-/* Floating card pulse */
 .floating-card {
-  animation: float 5s ease-in-out infinite, glow 4s ease-in-out infinite;
-}
-
-@keyframes glow {
-  0%, 100% { box-shadow: 0 22px 60px rgba(20,18,15,0.16); }
-  50%      { box-shadow: 0 22px 80px rgba(201,153,91,0.32); }
+  animation: float 6s ease-in-out infinite;
 }
 
 /* FAQ open animation */
