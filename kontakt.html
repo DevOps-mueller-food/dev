@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Kontakt zu Müller Food & Eventservice. Adresse: Pradaschan 17, 7306 Fläsch GR. E-Mail: info@mueller-food.ch. Anfragen für Privatkunden, Gastronomie und Handel." />
+  <title>Kontakt · Müller Food &amp; Eventservice</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="brand" aria-label="Müller Food Startseite">
+        <span class="brand-mark">M</span>
+        <span class="brand-text">
+          <span>Müller Food</span>
+          <small>matzes ravioli</small>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="Hauptnavigation">
+        <a href="produkte.html">Sortiment</a>
+        <a href="manufaktur.html">Manufaktur</a>
+        <a href="gastronomie.html">Gastronomie</a>
+        <a href="kontakt.html" class="active">Kontakt</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="btn btn-ghost" href="#anfrage">B2B Anfrage</a>
+        <a class="cart-pill" href="produkte.html">Shop</a>
+      </div>
+
+      <button class="mobile-menu" aria-label="Menü öffnen">☰</button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="page-hero">
+      <div class="container page-hero-inner">
+        <nav class="breadcrumbs" aria-label="Brotkrumennavigation">
+          <a href="index.html">Start</a> <span>/</span> <span aria-current="page">Kontakt</span>
+        </nav>
+        <span class="eyebrow">Wir freuen uns auf Sie</span>
+        <h1>Reden wir <span>Pasta</span>.</h1>
+        <p>
+          Egal ob Sie als Privatkunde bestellen, als Restaurant ein Sortiment aufbauen oder als Delikatessenladen
+          matzes ravioli ins Regal stellen wollen &mdash; wir antworten persönlich und in der Regel innerhalb
+          von 1&ndash;2 Arbeitstagen.
+        </p>
+      </div>
+    </section>
+
+    <section class="section contact-bg" id="anfrage">
+      <div class="container contact-card">
+        <div class="contact-info">
+          <h2>Müller Food &amp; Eventservice</h2>
+          <p>Pasta-Manufaktur in Fläsch &mdash; gegründet 2019 von Marcel Müller.</p>
+          <ul class="contact-list">
+            <li>
+              <span class="icon" aria-hidden="true">📍</span>
+              <span>
+                <strong>Adresse</strong><br />
+                <a href="https://maps.google.com/?q=Pradaschan+17,+7306+Fläsch" target="_blank" rel="noopener">Pradaschan 17<br />7306 Fläsch · Graubünden · Schweiz</a>
+              </span>
+            </li>
+            <li>
+              <span class="icon" aria-hidden="true">✉️</span>
+              <span>
+                <strong>E-Mail</strong><br />
+                <a href="mailto:info@mueller-food.ch">info@mueller-food.ch</a>
+              </span>
+            </li>
+            <li>
+              <span class="icon" aria-hidden="true">🌐</span>
+              <span>
+                <strong>Online-Shop</strong><br />
+                <a href="https://www.mueller-food.ch/shop" target="_blank" rel="noopener">mueller-food.ch/shop</a>
+              </span>
+            </li>
+            <li>
+              <span class="icon" aria-hidden="true">🕒</span>
+              <span>
+                <strong>Erreichbarkeit</strong><br />
+                Mo&ndash;Fr · 09:00&ndash;17:00<br />
+                Abholung in Fläsch nach Absprache
+              </span>
+            </li>
+            <li>
+              <span class="icon" aria-hidden="true">🆔</span>
+              <span>
+                <strong>UID</strong><br />
+                CHE-378.055.394
+              </span>
+            </li>
+          </ul>
+        </div>
+
+        <form class="form" action="mailto:info@mueller-food.ch" method="post" enctype="text/plain">
+          <div class="form-row">
+            <div class="field">
+              <label for="name">Name *</label>
+              <input id="name" name="name" type="text" autocomplete="name" required />
+            </div>
+            <div class="field">
+              <label for="email">E-Mail *</label>
+              <input id="email" name="email" type="email" autocomplete="email" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="type">Anfrage</label>
+              <select id="type" name="type">
+                <option>Privatkunde · Bestellung</option>
+                <option>Restaurant / Gastronomie</option>
+                <option>Hotel / Catering</option>
+                <option>Delikatessenladen / Handel</option>
+                <option>Eventservice / Foodtruck</option>
+                <option>Sonstiges</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="phone">Telefon</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="Optional" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="company">Firma / Betrieb (optional)</label>
+            <input id="company" name="company" type="text" autocomplete="organization" />
+          </div>
+
+          <div class="field">
+            <label for="message">Ihre Nachricht *</label>
+            <textarea id="message" name="message" placeholder="Welche Sorten interessieren Sie? Welche Mengen? Wann brauchen Sie die Lieferung?" required></textarea>
+          </div>
+
+          <label class="form-consent">
+            <input id="consent" name="consent" type="checkbox" required />
+            <span>Ich habe die <a href="datenschutz.html" style="text-decoration: underline;">Datenschutzerklärung</a> gelesen und bin damit einverstanden, dass meine Angaben zur Bearbeitung der Anfrage verwendet werden.</span>
+          </label>
+
+          <button class="btn btn-primary" type="submit">Anfrage senden</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="split-head">
+          <div>
+            <span class="eyebrow">Anfahrt</span>
+            <h2 class="section-title">Sie finden uns in Fläsch.</h2>
+            <p class="section-lead">
+              Pradaschan 17, 7306 Fläsch &mdash; im Bündner Rheintal, gut erreichbar von Chur, Maienfeld und
+              Bad Ragaz aus. Abholung nach Absprache &mdash; bitte vorab kurz anfragen, damit wir bereitstellen können.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="https://maps.google.com/?q=Pradaschan+17,+7306+Fläsch" target="_blank" rel="noopener">In Google Maps öffnen ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: 32px; border-radius: var(--radius-xl); overflow: hidden; border: 1px solid var(--line); box-shadow: var(--shadow-soft);">
+          <iframe
+            title="Karte: Standort Müller Food, Fläsch"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=9.500%2C47.0050%2C9.530%2C47.0250&amp;layer=mapnik&amp;marker=47.0162%2C9.5141"
+            width="100%"
+            height="420"
+            style="display:block; border:0;"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <small>matzes ravioli</small>
+          <h2>Müller Food &amp; Eventservice</h2>
+          <p>Schweizer Pasta-Manufaktur aus Fläsch GR.<br />Gefüllte Pasta für Zuhause, Gastronomie und Handel.</p>
+        </div>
+
+        <div class="footer-col">
+          <h3>Website</h3>
+          <nav>
+            <a href="produkte.html">Sortiment</a>
+            <a href="manufaktur.html">Manufaktur</a>
+            <a href="gastronomie.html">Gastronomie</a>
+            <a href="kontakt.html">Kontakt</a>
+          </nav>
+        </div>
+
+        <div class="footer-col">
+          <h3>Kontakt</h3>
+          <nav>
+            <a href="https://maps.google.com/?q=Pradaschan+17,+7306+Fläsch" target="_blank" rel="noopener">Pradaschan 17<br />7306 Fläsch</a>
+            <a href="mailto:info@mueller-food.ch">info@mueller-food.ch</a>
+          </nav>
+        </div>
+
+        <div class="footer-col">
+          <h3>Rechtliches</h3>
+          <nav>
+            <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
+            <a href="datenschutz.html#agb">AGB</a>
+          </nav>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Müller Food &amp; Eventservice · CHE-378.055.394</span>
+        <span>Made in Fläsch · Graubünden</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
