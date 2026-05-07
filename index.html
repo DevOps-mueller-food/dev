@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Müller Food aus der Schweiz. Hochwertige frische und tiefgekühlte Ravioli und Pasta für Privatkunden, Gastronomie, Restaurants und Delikatessenläden." />
+  <title>Müller Food | Schweizer Ravioli & Pasta</title>
+
+  <style>
+    :root {
+      --bg: #f7f2ea;
+      --bg-soft: #fffaf3;
+      --dark: #14120f;
+      --dark-soft: #26211c;
+      --text: #2d2924;
+      --muted: #72695f;
+      --line: rgba(20, 18, 15, 0.12);
+      --cream: #fff7ec;
+      --gold: #c9995b;
+      --gold-dark: #926936;
+      --green: #23352b;
+      --green-soft: #344b3d;
+      --tomato: #9f3d2e;
+      --white: #ffffff;
+      --shadow: 0 24px 80px rgba(20, 18, 15, 0.14);
+      --radius-xl: 34px;
+      --radius-lg: 24px;
+      --radius-md: 16px;
+      --container: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    .container {
+      width: min(var(--container), calc(100% - 32px));
+      margin-inline: auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      color: var(--gold-dark);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    .section {
+      padding: 110px 0;
+    }
+
+    .section-title {
+      max-width: 760px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.1rem, 5vw, 4.8rem);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+      color: var(--dark);
+    }
+
+    .section-lead {
+      max-width: 660px;
+      margin-top: 24px;
+      font-size: clamp(1rem, 1.7vw, 1.22rem);
+      color: var(--muted);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 0 24px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 0.92rem;
+      font-weight: 800;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--dark);
+      color: var(--cream);
+      box-shadow: 0 16px 38px rgba(20, 18, 15, 0.22);
+    }
+
+    .btn-primary:hover {
+      background: var(--green);
+    }
+
+    .btn-light {
+      background: var(--cream);
+      color: var(--dark);
+      border-color: rgba(255, 247, 236, 0.35);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--dark);
+      border-color: var(--line);
+    }
+
+    .site-header {
+      position: fixed;
+      inset: 18px 0 auto 0;
+      z-index: 50;
+      pointer-events: none;
+    }
+
+    .nav {
+      pointer-events: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      min-height: 74px;
+      padding: 10px 12px 10px 24px;
+      border: 1px solid rgba(255, 255, 255, 0.44);
+      border-radius: 999px;
+      background: rgba(255, 250, 243, 0.76);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 16px 52px rgba(20, 18, 15, 0.12);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      color: var(--dark);
+    }
+
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--green);
+      color: var(--gold);
+      font-family: Georgia, serif;
+      font-size: 1.4rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      color: var(--dark-soft);
+      font-size: 0.9rem;
+      font-weight: 750;
+    }
+
+    .nav-links a {
+      position: relative;
+      opacity: 0.82;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .cart-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      height: 52px;
+      padding: 0 20px;
+      border-radius: 999px;
+      background: var(--green);
+      color: var(--cream);
+      font-weight: 850;
+      font-size: 0.9rem;
+    }
+
+    .mobile-menu {
+      display: none;
+      width: 52px;
+      height: 52px;
+      border: 0;
+      border-radius: 50%;
+      background: var(--dark);
+      color: var(--cream);
+      cursor: pointer;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      padding: 132px 0 48px;
+      display: grid;
+      align-items: end;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 85% 16%, rgba(201, 153, 91, 0.28), transparent 28%),
+        linear-gradient(135deg, #fff7ec 0%, #f1e5d4 50%, #d9c0a1 100%);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(20,18,15,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(20,18,15,0.04) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: linear-gradient(to bottom, transparent, #000 20%, #000 70%, transparent);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.04fr 0.96fr;
+      gap: 54px;
+      align-items: end;
+    }
+
+    .hero-copy {
+      padding-bottom: 64px;
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 22px;
+      padding: 8px 13px;
+      border: 1px solid rgba(20,18,15,0.12);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.34);
+      color: var(--green);
+      font-size: 0.78rem;
+      font-weight: 850;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      max-width: 800px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3.2rem, 8.4vw, 8.4rem);
+      line-height: 0.86;
+      letter-spacing: -0.075em;
+      color: var(--dark);
+    }
+
+    .hero h1 span {
+      color: var(--green);
+    }
+
+    .hero-text {
+      max-width: 590px;
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: clamp(1.02rem, 1.5vw, 1.22rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .hero-meta {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 44px;
+      max-width: 710px;
+    }
+
+    .meta-card {
+      padding: 18px;
+      border: 1px solid rgba(20, 18, 15, 0.1);
+      border-radius: 22px;
+      background: rgba(255, 250, 243, 0.54);
+      backdrop-filter: blur(12px);
+    }
+
+    .meta-card strong {
+      display: block;
+      font-size: 1.05rem;
+      color: var(--dark);
+    }
+
+    .meta-card span {
+      display: block;
+      margin-top: 4px;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 690px;
+      display: grid;
+      align-items: end;
+    }
+
+    .plate {
+      position: relative;
+      aspect-ratio: 0.82;
+      border-radius: 46% 46% 38% 38% / 40% 40% 46% 46%;
+      background:
+        radial-gradient(circle at 50% 43%, rgba(255,255,255,0.88) 0 22%, transparent 23%),
+        radial-gradient(circle at 50% 43%, #f6e5ca 0 42%, #d8a76b 43% 48%, #6f3c24 49% 52%, transparent 53%),
+        linear-gradient(145deg, #2d231a, #5f3826 48%, #c89152);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transform: rotate(-2deg);
+    }
+
+    .plate::before {
+      content: "";
+      position: absolute;
+      inset: 9%;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 48% 40%, rgba(255,255,255,0.7), transparent 18%),
+        conic-gradient(from 40deg, #f0ca92, #b45b38, #f7d69d, #8c3e2a, #e9ba78, #f0ca92);
+      filter: blur(0.2px);
+      box-shadow: inset 0 0 0 18px rgba(255, 247, 236, 0.34);
+    }
+
+    .plate::after {
+      content: "Ravioli";
+      position: absolute;
+      left: 38px;
+      bottom: 38px;
+      padding: 12px 16px;
+      border-radius: 999px;
+      background: rgba(20, 18, 15, 0.72);
+      color: var(--cream);
+      font-family: Georgia, serif;
+      font-size: 1.3rem;
+      backdrop-filter: blur(14px);
+    }
+
+    .floating-card {
+      position: absolute;
+      right: -10px;
+      top: 120px;
+      width: min(270px, 46vw);
+      padding: 20px;
+      border: 1px solid rgba(255,255,255,0.42);
+      border-radius: 28px;
+      background: rgba(255, 250, 243, 0.76);
+      box-shadow: 0 22px 60px rgba(20,18,15,0.16);
+      backdrop-filter: blur(18px);
+      animation: float 5s ease-in-out infinite;
+    }
+
+    .floating-card small {
+      color: var(--muted);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .floating-card strong {
+      display: block;
+      margin-top: 8px;
+      color: var(--dark);
+      font-family: Georgia, serif;
+      font-size: 1.7rem;
+      line-height: 1;
+    }
+
+    .stamp {
+      position: absolute;
+      left: -18px;
+      bottom: 96px;
+      display: grid;
+      place-items: center;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: var(--green);
+      color: var(--cream);
+      box-shadow: 0 22px 60px rgba(20,18,15,0.2);
+      text-align: center;
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      animation: rotateStamp 18s linear infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-14px); }
+    }
+
+    @keyframes rotateStamp {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .trust-bar {
+      padding: 28px 0;
+      background: var(--dark);
+      color: var(--cream);
+      overflow: hidden;
+    }
+
+    .trust-track {
+      display: flex;
+      gap: 52px;
+      white-space: nowrap;
+      animation: marquee 28s linear infinite;
+      font-size: 0.88rem;
+      font-weight: 850;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .trust-track span {
+      opacity: 0.78;
+    }
+
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    .products {
+      background: var(--bg-soft);
+    }
+
+    .split-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 46px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .product-card {
+      position: relative;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background: var(--white);
+      box-shadow: 0 14px 40px rgba(20,18,15,0.06);
+      overflow: hidden;
+      transition: transform 0.28s ease, box-shadow 0.28s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow);
+    }
+
+    .product-img {
+      display: grid;
+      place-items: center;
+      height: 310px;
+      border-radius: 26px;
+      background:
+        radial-gradient(circle at 50% 44%, rgba(255,255,255,0.86), transparent 24%),
+        linear-gradient(145deg, #f4d4a5, #a95b3d 55%, #3b261d);
+      overflow: hidden;
+    }
+
+    .product-img.pesto {
+      background: linear-gradient(145deg, #efe3b3, #61784d 58%, #26372a);
+    }
+
+    .product-img.spinach {
+      background: linear-gradient(145deg, #f6dfbb, #7e9b67 52%, #322a20);
+    }
+
+    .pasta-shape {
+      width: 190px;
+      height: 190px;
+      border-radius: 44% 56% 50% 50%;
+      background: radial-gradient(circle at 40% 34%, #fff3cd, #d89b54 70%);
+      box-shadow: inset 0 0 0 14px rgba(255,255,255,0.22), 0 24px 52px rgba(20,18,15,0.24);
+      transform: rotate(18deg);
+    }
+
+    .product-body {
+      padding: 22px 4px 2px;
+    }
+
+    .product-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      align-items: start;
+      margin-bottom: 12px;
+    }
+
+    .product-card h3 {
+      font-family: Georgia, serif;
+      font-size: 1.62rem;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      color: var(--dark);
+    }
+
+    .price {
+      color: var(--green);
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .product-card p {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .product-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 22px;
+      gap: 12px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: #f5eadb;
+      color: var(--gold-dark);
+      font-size: 0.74rem;
+      font-weight: 850;
+    }
+
+    .mini-btn {
+      width: 46px;
+      height: 46px;
+      border: 0;
+      border-radius: 50%;
+      background: var(--dark);
+      color: var(--cream);
+      cursor: pointer;
+      font-size: 1.25rem;
+      transition: transform 0.25s ease;
+    }
+
+    .mini-btn:hover {
+      transform: scale(1.06);
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .story-visual {
+      min-height: 610px;
+      border-radius: var(--radius-xl);
+      background:
+        linear-gradient(rgba(20,18,15,0.12), rgba(20,18,15,0.3)),
+        radial-gradient(circle at 34% 28%, #f8dfad, transparent 22%),
+        linear-gradient(145deg, #8c4c32, #1f2d25 75%);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .story-visual::after {
+      content: "Handwerk seit Generationen";
+      position: absolute;
+      left: 28px;
+      right: 28px;
+      bottom: 28px;
+      padding: 24px;
+      border-radius: 26px;
+      background: rgba(255, 250, 243, 0.82);
+      color: var(--dark);
+      font-family: Georgia, serif;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      line-height: 0.95;
+      letter-spacing: -0.05em;
+      backdrop-filter: blur(16px);
+    }
+
+    .story-list {
+      display: grid;
+      gap: 16px;
+      margin-top: 34px;
+    }
+
+    .story-item {
+      display: grid;
+      grid-template-columns: 58px 1fr;
+      gap: 18px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      background: rgba(255,250,243,0.58);
+    }
+
+    .story-number {
+      display: grid;
+      place-items: center;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: var(--green);
+      color: var(--cream);
+      font-weight: 950;
+    }
+
+    .story-item h3 {
+      color: var(--dark);
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+    }
+
+    .story-item p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .b2b {
+      background: var(--green);
+      color: var(--cream);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .b2b::before {
+      content: "";
+      position: absolute;
+      width: 640px;
+      height: 640px;
+      right: -220px;
+      top: -180px;
+      border-radius: 50%;
+      background: rgba(201,153,91,0.22);
+      filter: blur(4px);
+    }
+
+    .b2b .section-title,
+    .b2b .section-lead {
+      color: var(--cream);
+    }
+
+    .b2b .section-lead {
+      opacity: 0.76;
+    }
+
+    .b2b-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 38px;
+      align-items: start;
+    }
+
+    .b2b-cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .b2b-card {
+      min-height: 220px;
+      padding: 26px;
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 28px;
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(12px);
+    }
+
+    .b2b-card strong {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--gold);
+      font-family: Georgia, serif;
+      font-size: 1.7rem;
+      line-height: 1;
+    }
+
+    .b2b-card p {
+      color: rgba(255,247,236,0.76);
+      font-size: 0.94rem;
+    }
+
+    .shop-panel {
+      padding: 30px;
+      border-radius: var(--radius-xl);
+      background: var(--dark);
+      color: var(--cream);
+      box-shadow: var(--shadow);
+    }
+
+    .shop-panel h3 {
+      font-family: Georgia, serif;
+      font-size: clamp(2rem, 4vw, 3.8rem);
+      line-height: 0.95;
+      letter-spacing: -0.055em;
+      margin-bottom: 18px;
+    }
+
+    .shop-panel p {
+      color: rgba(255,247,236,0.72);
+      margin-bottom: 24px;
+    }
+
+    .shop-steps {
+      display: grid;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .shop-step {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 0;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      color: rgba(255,247,236,0.84);
+      font-weight: 760;
+    }
+
+    .contact {
+      background: var(--bg-soft);
+    }
+
+    .contact-card {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 28px;
+      padding: 24px;
+      border-radius: var(--radius-xl);
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .contact-info {
+      padding: 34px;
+      border-radius: 28px;
+      background: var(--dark);
+      color: var(--cream);
+    }
+
+    .contact-info h2 {
+      font-family: Georgia, serif;
+      font-size: clamp(2rem, 4vw, 4rem);
+      line-height: 0.95;
+      letter-spacing: -0.055em;
+      margin-bottom: 20px;
+    }
+
+    .contact-info p,
+    .contact-info li {
+      color: rgba(255,247,236,0.72);
+    }
+
+    .contact-list {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .form {
+      display: grid;
+      gap: 16px;
+      padding: 18px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .field {
+      display: grid;
+      gap: 8px;
+    }
+
+    .field label {
+      color: var(--dark);
+      font-size: 0.82rem;
+      font-weight: 850;
+    }
+
+    .field input,
+    .field textarea,
+    .field select {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fbf7f1;
+      padding: 16px 18px;
+      outline: none;
+      color: var(--dark);
+    }
+
+    .field textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .field input:focus,
+    .field textarea:focus,
+    .field select:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 4px rgba(201,153,91,0.15);
+    }
+
+    .site-footer {
+      padding: 72px 0 28px;
+      background: var(--dark);
+      color: var(--cream);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr repeat(3, 1fr);
+      gap: 34px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .footer-brand {
+      max-width: 360px;
+    }
+
+    .footer-brand h2 {
+      font-family: Georgia, serif;
+      font-size: 2.6rem;
+      line-height: 0.9;
+      letter-spacing: -0.055em;
+      margin-bottom: 18px;
+    }
+
+    .footer-brand p,
+    .footer-col a,
+    .footer-bottom {
+      color: rgba(255,247,236,0.65);
+      font-size: 0.94rem;
+    }
+
+    .footer-col h3 {
+      margin-bottom: 16px;
+      color: var(--gold);
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .footer-col nav {
+      display: grid;
+      gap: 10px;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding-top: 24px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      animation: reveal 0.9s ease forwards;
+    }
+
+    .delay-1 { animation-delay: 0.12s; }
+    .delay-2 { animation-delay: 0.24s; }
+    .delay-3 { animation-delay: 0.36s; }
+
+    @keyframes reveal {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 980px) {
+      .nav-links,
+      .nav-actions {
+        display: none;
+      }
+
+      .mobile-menu {
+        display: inline-grid;
+        place-items: center;
+      }
+
+      .hero-grid,
+      .story-grid,
+      .b2b-grid,
+      .contact-card,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy {
+        padding-bottom: 0;
+      }
+
+      .hero-visual {
+        min-height: 520px;
+      }
+
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .split-head {
+        align-items: start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .section {
+        padding: 76px 0;
+      }
+
+      .site-header {
+        inset: 10px 0 auto 0;
+      }
+
+      .nav {
+        min-height: 62px;
+        padding: 8px 8px 8px 14px;
+      }
+
+      .brand-mark {
+        width: 38px;
+        height: 38px;
+      }
+
+      .hero {
+        padding-top: 104px;
+      }
+
+      .hero h1 {
+        font-size: clamp(3.2rem, 18vw, 5.4rem);
+      }
+
+      .hero-meta {
+        grid-template-columns: 1fr;
+      }
+
+      .floating-card {
+        right: 10px;
+        top: 46px;
+      }
+
+      .stamp {
+        width: 104px;
+        height: 104px;
+        left: 10px;
+        bottom: 62px;
+        font-size: 0.62rem;
+      }
+
+      .b2b-cards,
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-info {
+        padding: 26px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#top" class="brand" aria-label="Müller Food Startseite">
+        <span class="brand-mark">M</span>
+        <span>Müller Food</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Hauptnavigation">
+        <a href="#produkte">Produkte</a>
+        <a href="#story">Manufaktur</a>
+        <a href="#gastro">Gastronomie</a>
+        <a href="#shop">Shop</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="btn btn-ghost" href="#gastro">B2B Anfrage</a>
+        <a class="cart-pill" href="#shop" aria-label="Warenkorb öffnen">Shop · 0</a>
+      </div>
+
+      <button class="mobile-menu" aria-label="Menü öffnen">☰</button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="hero-kicker reveal">Schweizer Pasta · frisch & tiefgekühlt</div>
+          <h1 id="hero-title" class="reveal delay-1">Ravioli mit <span>Charakter</span>.</h1>
+          <p class="hero-text reveal delay-2">
+            Premium Pasta aus der Schweiz. Sauber produziert, ehrlich im Geschmack und bereit für Zuhause, Restaurants und Delikatessenläden.
+          </p>
+          <div class="hero-actions reveal delay-3">
+            <a class="btn btn-primary" href="#produkte">Produkte entdecken →</a>
+            <a class="btn btn-ghost" href="#gastro">Für Gastronomie anfragen</a>
+          </div>
+
+          <div class="hero-meta reveal delay-3" aria-label="Vertrauensmerkmale">
+            <div class="meta-card">
+              <strong>Swiss Made</strong>
+              <span>Produktion in der Schweiz</span>
+            </div>
+            <div class="meta-card">
+              <strong>Frisch oder TK</strong>
+              <span>Flexibel für jede Küche</span>
+            </div>
+            <div class="meta-card">
+              <strong>B2B bereit</strong>
+              <span>Für Gastro & Handel</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="floating-card">
+            <small>Beliebt</small>
+            <strong>Ravioli Ricotta</strong>
+          </div>
+          <div class="plate"></div>
+          <div class="stamp">Premium Pasta · Müller Food ·</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust-bar" aria-hidden="true">
+      <div class="trust-track">
+        <span>Schweizer Herstellung</span><span>Kurze Wege</span><span>Premium Füllungen</span><span>Für Privatkunden</span><span>Für Restaurants</span><span>Für Delikatessenläden</span>
+        <span>Schweizer Herstellung</span><span>Kurze Wege</span><span>Premium Füllungen</span><span>Für Privatkunden</span><span>Für Restaurants</span><span>Für Delikatessenläden</span>
+      </div>
+    </div>
+
+    <section class="section products" id="produkte">
+      <div class="container">
+        <div class="split-head">
+          <div>
+            <span class="eyebrow">Sortiment</span>
+            <h2 class="section-title">Pasta, die nicht nach Standard schmeckt.</h2>
+            <p class="section-lead">Klare Produktkarten. Klare Infos. Zutaten, Allergene, Lagerung und Zubereitung gehören direkt sichtbar in den Shop.</p>
+          </div>
+          <a class="btn btn-primary" href="#shop">Zum Shop</a>
+        </div>
+
+        <div class="product-grid">
+          <article class="product-card">
+            <div class="product-img" role="img" aria-label="Ravioli mit Tomatenfüllung auf dunklem Teller">
+              <div class="pasta-shape"></div>
+            </div>
+            <div class="product-body">
+              <div class="product-top">
+                <h3>Ravioli Pomodoro</h3>
+                <span class="price">ab CHF 8.90</span>
+              </div>
+              <p>Kräftig, warm und italienisch. Ideal für schnelle Premium-Gerichte.</p>
+              <div class="tag-list">
+                <span class="tag">Frisch</span>
+                <span class="tag">TK möglich</span>
+                <span class="tag">Gastro-Pack</span>
+              </div>
+              <div class="product-footer">
+                <span>250 g · 2 Portionen</span>
+                <button class="mini-btn" aria-label="Ravioli Pomodoro hinzufügen">+</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-img pesto" role="img" aria-label="Ravioli mit Pesto und Kräutern">
+              <div class="pasta-shape"></div>
+            </div>
+            <div class="product-body">
+              <div class="product-top">
+                <h3>Ravioli Basilico</h3>
+                <span class="price">ab CHF 9.40</span>
+              </div>
+              <p>Frisch, grün und elegant. Für Teller mit wenig Aufwand und viel Wirkung.</p>
+              <div class="tag-list">
+                <span class="tag">Vegetarisch</span>
+                <span class="tag">Premium</span>
+                <span class="tag">Kurz gegart</span>
+              </div>
+              <div class="product-footer">
+                <span>250 g · 2 Portionen</span>
+                <button class="mini-btn" aria-label="Ravioli Basilico hinzufügen">+</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-img spinach" role="img" aria-label="Ravioli mit Spinat und Ricotta">
+              <div class="pasta-shape"></div>
+            </div>
+            <div class="product-body">
+              <div class="product-top">
+                <h3>Ricotta Spinat</h3>
+                <span class="price">ab CHF 8.70</span>
+              </div>
+              <p>Der Klassiker. Cremig, ausgewogen und stark für Verkauf und Gastronomie.</p>
+              <div class="tag-list">
+                <span class="tag">Klassiker</span>
+                <span class="tag">Familienformat</span>
+                <span class="tag">B2B</span>
+              </div>
+              <div class="product-footer">
+                <span>250 g · 2 Portionen</span>
+                <button class="mini-btn" aria-label="Ricotta Spinat hinzufügen">+</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="story">
+      <div class="container story-grid">
+        <div class="story-visual" role="img" aria-label="Stimmungsbild einer Schweizer Pasta-Manufaktur"></div>
+        <div>
+          <span class="eyebrow">Manufaktur</span>
+          <h2 class="section-title">Schweizer Qualität. Ohne lautes Theater.</h2>
+          <p class="section-lead">Die Marke muss Vertrauen geben. Nicht durch Floskeln. Sondern durch Herkunft, klare Daten, saubere Produktinfos und einen starken Auftritt.</p>
+
+          <div class="story-list">
+            <div class="story-item">
+              <div class="story-number">01</div>
+              <div>
+                <h3>Saubere Herkunft</h3>
+                <p>Zeige klar, wo produziert wird und was Müller Food besser macht.</p>
+              </div>
+            </div>
+            <div class="story-item">
+              <div class="story-number">02</div>
+              <div>
+                <h3>Klare Produktdaten</h3>
+                <p>Zutaten, Allergene, Nährwerte und Lagerung direkt beim Produkt.</p>
+              </div>
+            </div>
+            <div class="story-item">
+              <div class="story-number">03</div>
+              <div>
+                <h3>Premium ohne Blabla</h3>
+                <p>Wenig Text. Starke Bilder. Konkrete Aussagen. Genau so wirkt es hochwertig.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section b2b" id="gastro">
+      <div class="container b2b-grid">
+        <div>
+          <span class="eyebrow">Gastronomie</span>
+          <h2 class="section-title">Für Küchen, die konstant liefern müssen.</h2>
+          <p class="section-lead">Restaurants, Hotels und Delikatessenläden brauchen verlässliche Qualität. Genau dort muss die neue Website professionell überzeugen.</p>
+          <div class="hero-actions">
+            <a class="btn btn-light" href="#kontakt">B2B Anfrage starten</a>
+            <a class="btn btn-ghost" style="color: var(--cream); border-color: rgba(255,255,255,.18);" href="#produkte">Sortiment ansehen</a>
+          </div>
+        </div>
+
+        <div class="b2b-cards">
+          <div class="b2b-card">
+            <strong>Planbar</strong>
+            <p>Konstante Qualität für Menüs, Wochenkarten und Catering.</p>
+          </div>
+          <div class="b2b-card">
+            <strong>Flexibel</strong>
+            <p>Frische Ware oder tiefgekühlt. Je nach Prozess und Küche.</p>
+          </div>
+          <div class="b2b-card">
+            <strong>Skalierbar</strong>
+            <p>Portionen für kleine Betriebe bis grössere Gastro-Mengen.</p>
+          </div>
+          <div class="b2b-card">
+            <strong>Direkt</strong>
+            <p>Kurze Anfrage. Klare Konditionen. Persönlicher Kontakt.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="shop">
+      <div class="container b2b-grid">
+        <div>
+          <span class="eyebrow">Online-Shop</span>
+          <h2 class="section-title">Ein Shop, der Vertrauen verkauft.</h2>
+          <p class="section-lead">Der Shop muss schnell, sauber und rechtlich vollständig sein. Besonders bei Lebensmitteln zählen klare Pflichtinfos und ein seriöser Checkout.</p>
+        </div>
+
+        <div class="shop-panel">
+          <h3>Frisch bestellt. Sauber geliefert.</h3>
+          <p>Demo-Bereich für den späteren Shop. Hier kommen echte Produkte, Varianten, Lagerhinweise, Allergene und Lieferoptionen rein.</p>
+          <a class="btn btn-light" href="#produkte">Produkte auswählen</a>
+
+          <div class="shop-steps">
+            <div class="shop-step"><span>01 · Produkt wählen</span><span>→</span></div>
+            <div class="shop-step"><span>02 · Frisch oder TK wählen</span><span>→</span></div>
+            <div class="shop-step"><span>03 · Lieferung oder Abholung</span><span>→</span></div>
+            <div class="shop-step"><span>04 · Sicher bezahlen</span><span>→</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="kontakt">
+      <div class="container contact-card">
+        <div class="contact-info">
+          <h2>Bereit für neue Pasta?</h2>
+          <p>Kontaktbereich für Privatkunden, Restaurants und Händler. Kurz. Klar. Ohne Chaos.</p>
+          <ul class="contact-list">
+            <li>📍 Adresse hier ergänzen</li>
+            <li>☎ Telefon hier ergänzen</li>
+            <li>✉ info@mueller-food.ch</li>
+            <li>🕒 Öffnungszeiten hier ergänzen</li>
+          </ul>
+        </div>
+
+        <form class="form" action="#" method="post">
+          <div class="form-row">
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" autocomplete="name" required />
+            </div>
+            <div class="field">
+              <label for="email">E-Mail</label>
+              <input id="email" name="email" type="email" autocomplete="email" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="type">Anfrage</label>
+              <select id="type" name="type">
+                <option>Privatkunde</option>
+                <option>Restaurant / Gastronomie</option>
+                <option>Delikatessenladen</option>
+                <option>Sonstiges</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="phone">Telefon</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="message">Nachricht</label>
+            <textarea id="message" name="message" placeholder="Worum geht es?"></textarea>
+          </div>
+
+          <button class="btn btn-primary" type="submit">Anfrage senden</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h2>Müller Food</h2>
+          <p>Schweizer Ravioli und Pasta für Zuhause, Gastronomie und Handel.</p>
+        </div>
+
+        <div class="footer-col">
+          <h3>Website</h3>
+          <nav>
+            <a href="#produkte">Produkte</a>
+            <a href="#story">Manufaktur</a>
+            <a href="#gastro">Gastronomie</a>
+            <a href="#shop">Shop</a>
+          </nav>
+        </div>
+
+        <div class="footer-col">
+          <h3>Service</h3>
+          <nav>
+            <a href="#kontakt">Kontakt</a>
+            <a href="#">Verkaufsstellen</a>
+            <a href="#">Lieferung</a>
+            <a href="#">FAQ</a>
+          </nav>
+        </div>
+
+        <div class="footer-col">
+          <h3>Rechtliches</h3>
+          <nav>
+            <a href="#">Impressum</a>
+            <a href="#">Datenschutz</a>
+            <a href="#">AGB</a>
+            <a href="#">Widerruf / Rückgabe</a>
+          </nav>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Müller Food. Alle Rechte vorbehalten.</span>
+        <span>Made for Swiss premium food.</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
