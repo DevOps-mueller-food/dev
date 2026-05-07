@@ -899,13 +899,22 @@ select {
 .value-icon {
   display: grid;
   place-items: center;
-  width: 48px;
-  height: 48px;
+  width: 52px;
+  height: 52px;
   border-radius: 14px;
   background: var(--cream);
   color: var(--green);
-  font-size: 1.4rem;
-  margin-bottom: 16px;
+  font-family: Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 800;
+  margin-bottom: 18px;
+  border: 1px solid rgba(35, 53, 43, 0.08);
+}
+
+.value-icon svg {
+  width: 24px;
+  height: 24px;
+  display: block;
 }
 
 .value-card h3 {
@@ -1078,11 +1087,22 @@ select {
 .contact-list .icon {
   display: grid;
   place-items: center;
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   border-radius: 10px;
   background: rgba(201,153,91,0.18);
   color: var(--gold);
+  flex-shrink: 0;
+}
+
+.contact-list .icon svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+.contact-list li {
+  grid-template-columns: 36px 1fr;
 }
 
 .contact-list a {
