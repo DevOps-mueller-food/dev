@@ -84,6 +84,19 @@
   }
 
   /* ------------------------------------------------------------------ */
+  /* Pause hero animations when hero scrolls out of view                 */
+  /* ------------------------------------------------------------------ */
+  const hero = document.querySelector('.hero');
+  if (hero && 'IntersectionObserver' in window) {
+    const heroIo = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        document.body.classList.toggle('hero-off', !entry.isIntersecting);
+      });
+    }, { threshold: 0 });
+    heroIo.observe(hero);
+  }
+
+  /* ------------------------------------------------------------------ */
   /* Smooth-scroll for in-page anchors                                   */
   /* ------------------------------------------------------------------ */
   document.querySelectorAll('a[href^="#"]').forEach((a) => {
